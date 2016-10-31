@@ -1,0 +1,127 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../paper-button/paper-button.html">
+<link rel="import" href="../paper-card/paper-card.html">
+<link rel="import" href="../blink-logo/blink-logo.html">
+
+<!--
+    A card that contains unique data and information.
+
+    ### Example
+
+        <blink-card heading="Heading"></blink-card>
+
+    ### Styling
+    The following custom properties and mixins are available for styling:
+
+    Custom property | Description | Default
+    ----------------|-------------|----------
+    `--blink-card` | A mixin for blink-card | `{}`
+    `--blink-card-heading` | A mixin for the heading of the card | `{}`
+    `--blink-card-background-color` | Background color for the element | `#FFFFFF`
+    `--blink-card-button` | A mixin for the button in the card | `{}`
+    `--blink-card-button-color` | Background color for the button | `#FFFFFF`
+
+    @demo
+-->
+<dom-module id="blink-card">
+    <template>
+        <style>
+            :host paper-card {
+                background-color: var(--blink-card-background-color, #FFFFFF);
+                box-shadow: none !important;
+
+                @apply(--blink-card);
+            }
+
+            h2 {
+                text-align: center;
+                @apply(--blink-card-heading);
+            }
+
+            paper-button {
+                width: 100%;
+                background-color: var(--blink-card-button-color, #E84A5F);
+                font-weight: bold;
+
+                @apply(--blink-card-button);
+            }
+
+            [hidden] {
+                display: none !important;
+            }
+        </style>
+        <blink-logo
+            hidden$="[[!logo]]"
+            width="[[width]]"
+            height="[[height]]"
+            image="[[image]]"
+            alt="[[alt]]">
+        </blink-logo>
+
+        <paper-card>
+            <div class="card-content">
+                <template is="dom-if" if="heading">
+                    <h2>[[heading]]</h2>
+                </template>
+
+                <content></content>
+
+                <template is="dom-if" if="[[url]]">
+                <div>
+                    <a href="[[url]]" title="[[buttonTitle]]">
+                        <paper-button>[[buttonTitle]]</paper-button>
+                    </a>
+                </div>
+                </template>
+            </div>
+        </paper-card>
+
+
+    </template>
+    <script type="text/javascript">
+        Polymer({
+            is: 'blink-card',
+            properties: {
+                /** The heading or title of the Card */
+                heading: {
+                    type: String,
+                    value: '',
+                },
+                /** A button will be displayed if URL is specified at the bottom of the card */
+                url: {
+                    type: String,
+                    value: '',
+                },
+                /** Title for button when URL is specified */
+                buttonTitle: {
+                    type: String,
+                    value: '',
+                },
+                /** When `true`, it will display your logo. */
+                logo: {
+                    type: Boolean,
+                    value: false,
+                },
+                /** Width of the Logo */
+                width: {
+                    type: String,
+                    value: '56px',
+                },
+                /** Height of the Logo */
+                height: {
+                    type: String,
+                    value: '56px',
+                },
+                /** Default path for Logo */
+                image: {
+                    type: String,
+                },
+                /** Alternate text for Logo */
+                alt: {
+                    type: String,
+                    value: 'Blink Technologies Pte Ltd'
+                }
+            },
+        });
+    </script>
+</dom-module>

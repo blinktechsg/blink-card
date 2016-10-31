@@ -1,0 +1,18 @@
+{
+  "name": "blink-card",
+  "version": "1.0.0",
+  "description": "A card that contains unique data or information.",
+  "main": "blink-card.html",
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.4.0",
+    "paper-button": "PolymerElements/paper-button#^1.0.11",
+    "paper-card": "PolymerElements/paper-card#^1.1.1",
+    "blink-logo": "blinktechsg/blink-logo#^1.0.0"
+  },
+  "devDependencies": {
+    "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
+    "iron-demo-helpers": "PolymerElements/iron-demo-helpers#^1.0.0",
+    "web-component-tester": "^4.0.0",
+    "webcomponentsjs": "webcomponents/webcomponentsjs#^0.7.0"
+  }
+}
