@@ -2,37 +2,17 @@
 
 A card that contains unique data or information.
 
-## Install the Polymer-CLI
+### Example
 
-First, make sure you have the [Polymer CLI](https://www.npmjs.com/package/polymer-cli) installed. Then run `polymer serve` to serve your application locally.
+    <blink-card heading="Heading"></blink-card>
 
-## Viewing Your Application
+### Styling
+The following custom properties and mixins are available for styling:
 
-```
-$ polymer serve
-```
-
-## Building Your Application
-
-```
-$ polymer build
-```
-
-This will create a `build/` folder with `bundled/` and `unbundled/` sub-folders
-containing a bundled (Vulcanized) and unbundled builds, both run through HTML,
-CSS, and JS optimizers.
-
-You can serve the built versions by giving `polymer serve` a folder to serve
-from:
-
-```
-$ polymer serve build/bundled
-```
-
-## Running Tests
-
-```
-$ polymer test
-```
-
-Your application is already set up to be tested via [web-component-tester](https://github.com/Polymer/web-component-tester). Run `polymer test` to run your application's test suite locally.
+Custom property | Description | Default
+----------------|-------------|----------
+`--blink-card` | A mixin for blink-card | `{}`
+`--blink-card-heading` | A mixin for the heading of the card | `{}`
+`--blink-card-background-color` | Background color for the element | `#FFFFFF`
+`--blink-card-button` | A mixin for the button in the card | `{}`
+`--blink-card-button-color` | Background color for the button | `#FFFFFF`
